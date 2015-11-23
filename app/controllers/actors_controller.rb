@@ -4,6 +4,12 @@ class ActorsController < ApplicationController
     @actors=Actor.all
   end
 
+  def new
+      @actor=Actor.new
+
+  end
+
+
   def create
     @actor = Actor.new (actor_params)
     if @actor.save
@@ -13,9 +19,15 @@ class ActorsController < ApplicationController
     end
   end
 
-    def new
-      @actor=Actor.new
+
+
+    private
+
+    def actors_params
+
+      params.require(:actor).permit(:name, :image_url, :bio, :birth_date, :birth_place, :death_date, :death_place, :alive)
 
     end
+
 
 end
