@@ -1,0 +1,62 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+
+     <h1 class="text-center"> Creating New Actor </h1>
+
+     <p class="text-right"> <%= link_to "Back", root_path, class: "btn btn-primary btn-sm"%> </p>
+
+      <%= form_for @actor do |f| %>
+
+        <%= f.label :image_url %>
+        <div class="form-group">
+          <%= f.text_field :image_url, class: "form-control"  %>
+        </div>
+
+        <%= f.label :name %>
+        <div class="form-group">
+          <%= f.text_field :name,  class: "form-control" %>
+        </div>
+
+        <%= f.label :birth_date %>
+        <div class="form-group">
+          <%= f.date_field :birth_date, class: "form-control" %>
+        </div>
+
+          <%= f.label :birth_place %>
+         <div class="form-group">
+            <%= f.text_field :birth_place, class: "form-control"  %>
+         </div>
+
+         <%= f.label :death_date %>
+         <div class="form-group">
+            <%= f.date_field :death_date, class: "form-control" %>
+         </div>
+
+         <%= f.label :death_place %>
+         <div class="form-group">
+            <%= f.text_field :death_place, class: "form-control" %>
+         </div>
+
+         <%= f.label :bio %>
+        <div class="form-group">
+          <%= f.text_area :bio, class:  "form-control", :rows => "4" %>
+        </div>
+
+         <div>
+            <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+         </div>
+
+
+
+      <% end %>
+
+
+    </div>
+
+
+  </div>
+
+</div>
